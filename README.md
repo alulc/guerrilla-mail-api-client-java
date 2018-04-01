@@ -1,4 +1,6 @@
-[![](https://jitpack.io/v/refactorable/guerrilla-mail-api.svg)](https://jitpack.io/#refactorable/guerrilla-mail-api)
+<a href="https://jitpack.io/#refactorable/guerrilla-mail-api/v1.0.1"><img src="https://jitpack.io/v/refactorable/guerrilla-mail-api.svg" /></a>
+<br/>
+<a href="https://travis-ci.org/refactorable/guerrilla-mail-api/builds"><img src="https://travis-ci.org/refactorable/guerrilla-mail-api.svg?branch=master" /></a>
 
 # guerrilla-mail-api
 This is a simple java client for the guerrilla mail api.
