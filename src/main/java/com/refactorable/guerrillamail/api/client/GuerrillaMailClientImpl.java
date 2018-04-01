@@ -75,7 +75,7 @@ public class GuerrillaMailClientImpl implements GuerrillaMailClient {
             return null;
         } catch( Exception e ) {
             log.error( "email address request failed: ", e );
-            throw e;
+            throw new RuntimeException( e );
         }
     }
 
@@ -103,7 +103,7 @@ public class GuerrillaMailClientImpl implements GuerrillaMailClient {
             return null;
         } catch( Exception e ) {
             log.error( "email request failed: ", e );
-            throw e;
+            throw new RuntimeException( e );
         }
     }
 
@@ -134,7 +134,7 @@ public class GuerrillaMailClientImpl implements GuerrillaMailClient {
             return null;
         } catch( Exception e ) {
             log.error( "emails request failed: ", e );
-            throw e;
+            throw new RuntimeException( e );
         }
     }
 }
