@@ -13,11 +13,11 @@ GuerrillaMailClient guerrillaMailClient = GuerrillaMailClientFactory.defaultClie
 AddressResponse initializedAddressResponse = guerrillaMailClient.address( AddressRequest.initialize() );
 
 // customize address
+String sessionId = initializedAddressResponse.getSessionId();
 String emailUser = "test";
 AddressResponse addressResponse = guerrillaMailClient.address( AddressRequest.custom( sessionId, emailUser ) );
 
 // check for emails
-String sessionId = addressResponse.getSessionId();
 Long sequenceId = 0L;
 EmailsResponse emailsResponse = guerrillaMailClient.emails( EmailsRequest.check( sessionId, sequenceId ) );
 ```
