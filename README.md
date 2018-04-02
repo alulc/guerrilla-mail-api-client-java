@@ -47,22 +47,37 @@ dependencies {
 ## Usage
 I recommend looking at the integration tests to get a full understanding of what you can do, but below is just one example.
 ```java
-// create client
-Client client = ClientBuilder.newClient();
-WebTarget apiTarget = client.target( "http://api.guerrillamail.com" );
-GuerrillaMailClient guerrillaMailClient = GuerrillaMailClientFactory.defaultClient( apiTarget );
+import com.refactorable.guerrillamail.api.client.GuerrillaMailClient;
+import com.refactorable.guerrillamail.api.client.factory.GuerrillaMailClientFactory;
+import com.refactorable.guerrillamail.api.client.model.request.AddressRequest;
+import com.refactorable.guerrillamail.api.client.model.request.EmailsRequest;
+import com.refactorable.guerrillamail.api.client.model.response.AddressResponse;
+import com.refactorable.guerrillamail.api.client.model.response.EmailsResponse;
 
-// create address
-AddressResponse initializedAddressResponse = guerrillaMailClient.address( AddressRequest.initialize() );
+import javax.ws.rs.client.Client;
+import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.WebTarget;
 
-// customize address
-String sessionId = initializedAddressResponse.getSessionId();
-String emailUser = "test";
-AddressResponse addressResponse = guerrillaMailClient.address( AddressRequest.custom( sessionId, emailUser ) );
+public class GuerrillaMailClientExample {
 
-// check for emails
-Long sequenceId = 0L;
-EmailsResponse emailsResponse = guerrillaMailClient.emails( EmailsRequest.check( sessionId, sequenceId ) );
+    public static void main( String[] args ) {
+
+        // create client
+        Client client = ClientBuilder.newClient();
+        WebTarget apiTarget = client.target( "http://api.guerrillamail.com" );
+        GuerrillaMailClient guerrillaMailClient = GuerrillaMailClientFactory.defaultClient( apiTarget );
+
+        // create address
+        AddressResponse initializedAddressResponse = guerrillaMailClient.address( AddressRequest.initialize() );
+
+        // check for emails
+        String sessionId = initializedAddressResponse.getSessionId();
+        Long sequenceId = 0L;
+        EmailsResponse emailsResponse = guerrillaMailClient.emails( EmailsRequest.check( sessionId, sequenceId ) );
+
+        System.out.print( emailsResponse.getEmails() );
+    }
+}
 ```
 ## Testing
 
