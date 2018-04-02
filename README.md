@@ -81,6 +81,6 @@ public class GuerrillaMailClientExample {
 ```
 ## Testing
 
-You must have Gradle installed in order to run the tests:
+You must have Gradle installed in order to run the following:
 
     ./gradlew test
