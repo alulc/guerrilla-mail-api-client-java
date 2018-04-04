@@ -1,4 +1,22 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+}
+
+plugins {
+    id 'com.github.kt3k.coveralls' version '2.6.3'
+}
+
+apply plugin: 'jacoco'
 apply plugin: 'java'
+
+jacocoTestReport {
+    reports {
+        xml.enabled = true // coveralls plugin depends on xml format report
+        html.enabled = true
+    }
+}
 
 sourceCompatibility = 1.8
 

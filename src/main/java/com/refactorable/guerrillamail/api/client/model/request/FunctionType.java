@@ -6,7 +6,6 @@ public enum FunctionType {
     SET_EMAIL_USER( "set_email_user" ),
     CHECK_EMAIL( "check_email" ),
     GET_EMAIL_LIST( "get_email_list" ),
-    OLDER_EMAIL_LIST( "older_email_list" ),
     FETCH_EMAIL( "fetch_email" ),
     FORGET_ME( "forget_me" );
 
