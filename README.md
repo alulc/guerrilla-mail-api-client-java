@@ -1,6 +1,7 @@
 <a href="https://jitpack.io/#refactorable/guerrilla-mail-api/v1.0.1"><img src="https://jitpack.io/v/refactorable/guerrilla-mail-api.svg" /></a>
 <a href="https://jitpack.io/#refactorable/guerrilla-mail-api"><img src="https://jitpack.io/v/refactorable/guerrilla-mail-api/month.svg" /></a>
 <a href="https://coveralls.io/github/refactorable/guerrilla-mail-api"><img src="https://coveralls.io/repos/github/refactorable/guerrilla-mail-api/badge.svg" /></a>
+<a href="https://scan.coverity.com/projects/refactorable-guerrilla-mail-api"><img alt="Coverity Scan Build Status" src="https://scan.coverity.com/projects/15391/badge.svg"/></a>
 <a href="https://travis-ci.org/refactorable/guerrilla-mail-api/builds"><img src="https://travis-ci.org/refactorable/guerrilla-mail-api.svg?branch=master" /></a>
 <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" /></a>
 
