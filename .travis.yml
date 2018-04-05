@@ -3,5 +3,23 @@ language: java
 jdk:
   - oraclejdk8
 
+env:
+  global:
+   # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
+   #   via the "travis encrypt" command using the project repo's public key
+   - secure: "niCkfoS7Wf0xvclm1kE7AJDtKJ8Ek8ArRel8v96cpUFUUbaJhGeZvD4Q5iJ3ShWZMVNYS1lcu45tMqFMELHyK3QgAyIMr2rldEKgU99ZdORoyPXJ6oTsH0a1KOnWZ49orDroaxYqCuD9Xuss0H5h0w+JdzMsIl8FzCJ5lFHIZXgAnw7lZmLz6Md5w3a4J+heqO836dCyMOAkyMrt1pZP6CkLlvSiiBm1cJyG+5FXXR/pqjKhZMsORRXVYojSzZr7bccjKyddCNfvjTiylHvg2gkNIJYYJ5wYf2IddHgSevmOy4YU1xAKbB51xqH49nsJIy95dJzu3RGA739JzFYFnYALMCqdsfZIqoGER5maXbxcWpevsAa32MmonB8wA0uLT9aROrcNAMBl4znbjfF6ie4mX3XVL85gchk0sIagchmcOooNLs/B0y12WJxn1U2AROwNhtTsiyGNwSNxR8Jy76Q5TMeY24J2S6F43PWr9S1biULmTUd1pslnA9MYHLlbPLdkqTLkAQRpbifmYywm2RRyCqhkk8Yr7UCNUpzNXlCet+bKFwKiUWsiZ1amHRRBtV36Vn0KAuRFIMPYw0modTQcM2Tbl0Dxrw0qx9hbCUiB/ULx8MJ89r7SD2EfoyAGx6umAaZ/C4rbPbvQlThrVGQ5D1EX/GC+tXoEV3CTmwQ="
+
+before_install:
+  - echo -n | openssl s_client -connect https://scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-
+
 after_success:
   - ./gradlew jacocoTestReport coveralls
+
+addons:
+  coverity_scan:
+    project:
+      name: "refactorable/guerrilla-mail-api"
+      description: "guerrilla mail java client"
+    notification_email: andy.lulciuc@gmail.com
+    build_command: "./gradlew clean build"
+    branch_pattern: coverity_scan
