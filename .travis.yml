@@ -5,7 +5,7 @@ jdk:
 
 env:
   global:
-   - secure: niCkfoS7Wf0xvclm1kE7AJDtKJ8Ek8ArRel8v96cpUFUUbaJhGeZvD4Q5iJ3ShWZMVNYS1lcu45tMqFMELHyK3QgAyIMr2rldEKgU99ZdORoyPXJ6oTsH0a1KOnWZ49orDroaxYqCuD9Xuss0H5h0w+JdzMsIl8FzCJ5lFHIZXgAnw7lZmLz6Md5w3a4J+heqO836dCyMOAkyMrt1pZP6CkLlvSiiBm1cJyG+5FXXR/pqjKhZMsORRXVYojSzZr7bccjKyddCNfvjTiylHvg2gkNIJYYJ5wYf2IddHgSevmOy4YU1xAKbB51xqH49nsJIy95dJzu3RGA739JzFYFnYALMCqdsfZIqoGER5maXbxcWpevsAa32MmonB8wA0uLT9aROrcNAMBl4znbjfF6ie4mX3XVL85gchk0sIagchmcOooNLs/B0y12WJxn1U2AROwNhtTsiyGNwSNxR8Jy76Q5TMeY24J2S6F43PWr9S1biULmTUd1pslnA9MYHLlbPLdkqTLkAQRpbifmYywm2RRyCqhkk8Yr7UCNUpzNXlCet+bKFwKiUWsiZ1amHRRBtV36Vn0KAuRFIMPYw0modTQcM2Tbl0Dxrw0qx9hbCUiB/ULx8MJ89r7SD2EfoyAGx6umAaZ/C4rbPbvQlThrVGQ5D1EX/GC+tXoEV3CTmwQ=
+   - secure: "niCkfoS7Wf0xvclm1kE7AJDtKJ8Ek8ArRel8v96cpUFUUbaJhGeZvD4Q5iJ3ShWZMVNYS1lcu45tMqFMELHyK3QgAyIMr2rldEKgU99ZdORoyPXJ6oTsH0a1KOnWZ49orDroaxYqCuD9Xuss0H5h0w+JdzMsIl8FzCJ5lFHIZXgAnw7lZmLz6Md5w3a4J+heqO836dCyMOAkyMrt1pZP6CkLlvSiiBm1cJyG+5FXXR/pqjKhZMsORRXVYojSzZr7bccjKyddCNfvjTiylHvg2gkNIJYYJ5wYf2IddHgSevmOy4YU1xAKbB51xqH49nsJIy95dJzu3RGA739JzFYFnYALMCqdsfZIqoGER5maXbxcWpevsAa32MmonB8wA0uLT9aROrcNAMBl4znbjfF6ie4mX3XVL85gchk0sIagchmcOooNLs/B0y12WJxn1U2AROwNhtTsiyGNwSNxR8Jy76Q5TMeY24J2S6F43PWr9S1biULmTUd1pslnA9MYHLlbPLdkqTLkAQRpbifmYywm2RRyCqhkk8Yr7UCNUpzNXlCet+bKFwKiUWsiZ1amHRRBtV36Vn0KAuRFIMPYw0modTQcM2Tbl0Dxrw0qx9hbCUiB/ULx8MJ89r7SD2EfoyAGx6umAaZ/C4rbPbvQlThrVGQ5D1EX/GC+tXoEV3CTmwQ="
 
 after_success:
   - ./gradlew jacocoTestReport coveralls
@@ -13,8 +13,8 @@ after_success:
 addons:
   coverity_scan:
     project:
-      name: refactorable/guerrilla-mail-api
-      description: guerrilla mail java client
+      name: "refactorable/guerrilla-mail-api"
+      description: "guerrilla mail java client"
     notification_email: andy.lulciuc@gmail.com
-    build_command: ./gradlew clean build
+    build_command: "./gradlew build"
     branch_pattern: master
