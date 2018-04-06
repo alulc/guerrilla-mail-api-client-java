@@ -1,6 +1,7 @@
 <a href="https://jitpack.io/#refactorable/guerrilla-mail-api/v1.0.1"><img src="https://jitpack.io/v/refactorable/guerrilla-mail-api.svg" /></a>
 <a href="https://jitpack.io/#refactorable/guerrilla-mail-api"><img src="https://jitpack.io/v/refactorable/guerrilla-mail-api/month.svg" /></a>
 <a href="https://coveralls.io/github/refactorable/guerrilla-mail-api"><img src="https://coveralls.io/repos/github/refactorable/guerrilla-mail-api/badge.svg" /></a>
+<a href="https://snyk.io/test/github/refactorable/guerrilla-mail-api"><img src="https://snyk.io/test/github/refactorable/guerrilla-mail-api/badge.svg" alt="Known Vulnerabilities" data-canonical-src="https://snyk.io/test/github/{username}/{repo}" style="max-width:100%;"/></a>
 <a href="https://travis-ci.org/refactorable/guerrilla-mail-api/builds"><img src="https://travis-ci.org/refactorable/guerrilla-mail-api.svg?branch=master" /></a>
 <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" /></a>
 
