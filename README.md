@@ -6,6 +6,9 @@
 <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" /></a>
 
 # guerrilla-mail-api
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/7307ebf774be4ad3afe436613e2b7afe)](https://app.codacy.com/app/lulciuca/guerrilla-mail-api?utm_source=github.com&utm_medium=referral&utm_content=refactorable/guerrilla-mail-api&utm_campaign=badger)
+
 This is a simple java client for the guerrilla mail api.
 
 ## Requirements 
