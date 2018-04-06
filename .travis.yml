@@ -6,11 +6,3 @@ env:
     secure: C3C59ChGyv9yoBOnOx4DzyTsKiWs+5xln3SvANBefiTTuLxDS+2JeoEVv5bFisJGsfRXpZ6P+v/mlc8XMXvf/bhQPiZSaDnA9nRWblpj12M9g+Iav3bjiAz3+q2nvEZgkDzSbrVf1puHrcOWDA2ZAtRsNHRelAhusK21B78HWdrFEn4buFrT+KvaCZKfmlxzGMeFLVNUXNOaZRYIHgPp3s4O+B/scWWfeTiImj1FCSeZxadHsRF6215qU4xGGk//ZjinQxE8Kezk+JYAhMcFo3iWgUqZ0g9skPb7r0zWglh301HJ7yTvkmXmaP6HTAFrFyRMq82qvMRvUj3nt6g/r8WbUqj/qCRvnt0a/RwY6Ru0KPIiRlc8/ZcxUK/bh4BoOA5VQyC+/6p2WuWF0z5jbs8VyjbLT+RtKOV2dgj+8C6CnverBEFUBE08MK1gPaD7hIiu27jNMirwJVxa7GUrJsewwWOQWeWaqf1xdX+LbJJkA6r3UIlA4fJUhFMknD/hf8Ag0fN2Nz/h2Cg9SLcxnRQMJyQwQkyE/bCjEBYWFQswm9H4a2jecet3aWhjvZQjRMJQslL0UKt9ggPqte8PMi09JhJQpEQ09R76lMz+775iueFjCafEFYKGCUNEruOAfRdUGAOWur8C4gb1bOxQnMgculNNfRgqFzdjNfSMcmo=
 after_success:
 - "./gradlew jacocoTestReport coveralls"
-addons:
-  coverity_scan:
-    project:
-      name: refactorable/guerrilla-mail-api
-      description: guerrilla mail java client
-    notification_email: andy.lulciuc@gmail.com
-    build_command: "./gradlew build"
-    branch_pattern: master
