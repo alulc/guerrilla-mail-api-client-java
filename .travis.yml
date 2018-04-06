@@ -1,20 +1,16 @@
 language: java
-
 jdk:
-  - oraclejdk8
-
+- oraclejdk8
 env:
   global:
-   - secure: "niCkfoS7Wf0xvclm1kE7AJDtKJ8Ek8ArRel8v96cpUFUUbaJhGeZvD4Q5iJ3ShWZMVNYS1lcu45tMqFMELHyK3QgAyIMr2rldEKgU99ZdORoyPXJ6oTsH0a1KOnWZ49orDroaxYqCuD9Xuss0H5h0w+JdzMsIl8FzCJ5lFHIZXgAnw7lZmLz6Md5w3a4J+heqO836dCyMOAkyMrt1pZP6CkLlvSiiBm1cJyG+5FXXR/pqjKhZMsORRXVYojSzZr7bccjKyddCNfvjTiylHvg2gkNIJYYJ5wYf2IddHgSevmOy4YU1xAKbB51xqH49nsJIy95dJzu3RGA739JzFYFnYALMCqdsfZIqoGER5maXbxcWpevsAa32MmonB8wA0uLT9aROrcNAMBl4znbjfF6ie4mX3XVL85gchk0sIagchmcOooNLs/B0y12WJxn1U2AROwNhtTsiyGNwSNxR8Jy76Q5TMeY24J2S6F43PWr9S1biULmTUd1pslnA9MYHLlbPLdkqTLkAQRpbifmYywm2RRyCqhkk8Yr7UCNUpzNXlCet+bKFwKiUWsiZ1amHRRBtV36Vn0KAuRFIMPYw0modTQcM2Tbl0Dxrw0qx9hbCUiB/ULx8MJ89r7SD2EfoyAGx6umAaZ/C4rbPbvQlThrVGQ5D1EX/GC+tXoEV3CTmwQ="
-
+    secure: C3C59ChGyv9yoBOnOx4DzyTsKiWs+5xln3SvANBefiTTuLxDS+2JeoEVv5bFisJGsfRXpZ6P+v/mlc8XMXvf/bhQPiZSaDnA9nRWblpj12M9g+Iav3bjiAz3+q2nvEZgkDzSbrVf1puHrcOWDA2ZAtRsNHRelAhusK21B78HWdrFEn4buFrT+KvaCZKfmlxzGMeFLVNUXNOaZRYIHgPp3s4O+B/scWWfeTiImj1FCSeZxadHsRF6215qU4xGGk//ZjinQxE8Kezk+JYAhMcFo3iWgUqZ0g9skPb7r0zWglh301HJ7yTvkmXmaP6HTAFrFyRMq82qvMRvUj3nt6g/r8WbUqj/qCRvnt0a/RwY6Ru0KPIiRlc8/ZcxUK/bh4BoOA5VQyC+/6p2WuWF0z5jbs8VyjbLT+RtKOV2dgj+8C6CnverBEFUBE08MK1gPaD7hIiu27jNMirwJVxa7GUrJsewwWOQWeWaqf1xdX+LbJJkA6r3UIlA4fJUhFMknD/hf8Ag0fN2Nz/h2Cg9SLcxnRQMJyQwQkyE/bCjEBYWFQswm9H4a2jecet3aWhjvZQjRMJQslL0UKt9ggPqte8PMi09JhJQpEQ09R76lMz+775iueFjCafEFYKGCUNEruOAfRdUGAOWur8C4gb1bOxQnMgculNNfRgqFzdjNfSMcmo=
 after_success:
-  - ./gradlew jacocoTestReport coveralls
-
+- "./gradlew jacocoTestReport coveralls"
 addons:
   coverity_scan:
     project:
-      name: "refactorable/guerrilla-mail-api"
-      description: "guerrilla mail java client"
+      name: refactorable/guerrilla-mail-api
+      description: guerrilla mail java client
     notification_email: andy.lulciuc@gmail.com
     build_command: "./gradlew build"
     branch_pattern: master
