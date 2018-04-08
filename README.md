@@ -53,14 +53,15 @@ I recommend looking at the integration tests to get a full understanding of what
 ```java
 import com.refactorable.guerrillamail.api.client.GuerrillaMailClient;
 import com.refactorable.guerrillamail.api.client.factory.GuerrillaMailClientFactory;
-import com.refactorable.guerrillamail.api.client.model.request.AddressRequest;
-import com.refactorable.guerrillamail.api.client.model.request.EmailsRequest;
 import com.refactorable.guerrillamail.api.client.model.response.AddressResponse;
 import com.refactorable.guerrillamail.api.client.model.response.EmailsResponse;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.WebTarget;
+
+import static com.refactorable.guerrillamail.api.client.model.request.AddressRequest.initialize;
+import static com.refactorable.guerrillamail.api.client.model.request.EmailsRequest.check;
 
 public class GuerrillaMailClientExample {
 
@@ -72,12 +73,12 @@ public class GuerrillaMailClientExample {
         GuerrillaMailClient guerrillaMailClient = GuerrillaMailClientFactory.defaultClient( apiTarget );
 
         // create address
-        AddressResponse initializedAddressResponse = guerrillaMailClient.address( AddressRequest.initialize() );
+        AddressResponse initializedAddressResponse = guerrillaMailClient.address( initialize() );
 
         // check for emails
         String sessionId = initializedAddressResponse.getSessionId();
         Long sequenceId = 0L;
-        EmailsResponse emailsResponse = guerrillaMailClient.emails( EmailsRequest.check( sessionId, sequenceId ) );
+        EmailsResponse emailsResponse = guerrillaMailClient.emails( check( sessionId, sequenceId ) );
 
         System.out.print( emailsResponse.getEmails() );
     }
